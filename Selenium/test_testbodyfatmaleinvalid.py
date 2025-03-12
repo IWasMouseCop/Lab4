@@ -32,4 +32,9 @@ class TestTestbodyfatmaleinvalid():
     self.driver.find_element(By.ID, "cwaistmeter").click()
     self.driver.find_element(By.ID, "cwaistmeter").send_keys("0")
     self.driver.find_element(By.NAME, "x").click()
+
+    self.driver.find_element(By.NAME, "x").click()
+    result_text = self.driver.find_element(By.CSS_SELECTOR, "font > b").text
+    assert result_text == "Body Fat: 15.7%"
+    print("Male Test Case Result:", result_text)
   
